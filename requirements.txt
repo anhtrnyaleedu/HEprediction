@@ -1,0 +1,3 @@
+monai==0.8.1
+monai_weekly==0.9.dev2223
+torch==1.11.0+cu113
