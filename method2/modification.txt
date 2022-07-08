@@ -1,0 +1,2 @@
+1. Change to original image + HE dilation
+Input=(2x128x128x32)
