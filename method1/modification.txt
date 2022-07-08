@@ -1,0 +1,7 @@
+1. Change
+        resizeImage = Resize([192, 192, 32])
+        cropImage = CenterSpatialCrop(roi_size=(128, 128, 32))
+        scaleImage = ScaleIntensity()
+        image = resizeImage(image)
+        image = cropImage(image)
+        image = scaleImage(image)
