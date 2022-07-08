@@ -1,4 +1,4 @@
-1. Change
+1. Change to (128x128x32)
 		slice2 = slice1 + 32
         if slice2 > fullImage1seg.shape[2]:
             slice2 = fullImage1seg.shape[2]
