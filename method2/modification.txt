@@ -1,2 +1,5 @@
-1. Change to original image + HE dilation. Input=(2x128x128x32)
-4<Thickness<6
+Similar to method 1
+1. Input: original image + HE segmentation
+2. Change to (2x128x128x32) and ScaleIntensity()
+3. Using resnet10
+model = monai.networks.nets.resnet10(spatial_dims=3, n_input_channels=2, num_classes=1).to(device)
