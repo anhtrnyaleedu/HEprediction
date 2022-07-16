@@ -1,0 +1,18 @@
+1. Input: original image + HE segmentation
+2. Change to (2x128x128x32) and ScaleIntensity()
+
+		slice2 = slice1 + 32
+        if slice2 > fullImage1seg.shape[2]:
+            slice2 = fullImage1seg.shape[2]
+        img1 = np.zeros([fullImage1.shape[0], fullImage1.shape[1], 32])
+        img1seg = np.zeros([fullImage1seg.shape[0], fullImage1seg.shape[1], 32])
+		
+		.................
+        resizeImage = Resize([192, 192, 32])
+        cropImage = CenterSpatialCrop(roi_size=(128, 128, 32))
+        scaleImage = ScaleIntensity()
+        image = resizeImage(image)
+        image = cropImage(image)
+        image = scaleImage(image)
+3. Using resnet10
+model = monai.networks.nets.resnet10(spatial_dims=3, n_input_channels=2, num_classes=1).to(device)
